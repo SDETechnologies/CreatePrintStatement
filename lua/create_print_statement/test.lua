@@ -1,11 +1,11 @@
 local M = {}
 function M.test()
-    print("swag!")
+    -- print("swag!")
     local line = vim.fn.line(".")
-    print("line: ", line)
+    -- print("line: ", line)
     -- Get the text of the current line
     local line_text = vim.fn.getline(line)
-    print("line_text: ", line_text)
+    -- print("line_text: ", line_text)
     -- Get the highlighted text
     local selection = vim.fn.getreg(vim.v.register)
     -- local selection = vim.fn.getreg("*")
@@ -20,7 +20,7 @@ function M.test()
     local printStatement = ""
 
     local fileType = vim.bo.filetype
-    print('fileType: ', fileType)
+    -- print('fileType: ', fileType)
     if fileType == "lua" then
         printStatement = "print('" .. selection .. ":', " .. selection .. ")"
     elseif fileType == "go" then
@@ -31,7 +31,7 @@ function M.test()
     end
 
 
-    print("printStatement: ", printStatement)
+    -- print("printStatement: ", printStatement)
     if printStatement ~= "" then
         vim.fn.append(line, printStatement)
         vim.api.nvim_command('normal! j')
@@ -44,6 +44,6 @@ function M.test()
 end
 
 -- vim.keymap.set('v', '<leader>cp', function() test() end)
-M.test()
+-- M.test()
 
 return M
