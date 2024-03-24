@@ -19,7 +19,7 @@ function M.test()
     print("selection: ", selection)
 
     local printStatement = "print('" .. selection .. ":', " .. selection .. ")"
-    -- vim.fn.append(line, printStatement)
+    vim.fn.append(line, printStatement)
     print("printStatement: ", printStatement)
 end
 
