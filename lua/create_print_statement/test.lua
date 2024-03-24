@@ -21,7 +21,7 @@ function M.test()
 
     local fileType = vim.bo.filetype
     -- print('fileType: ', fileType)
-    if fileType == "lua" || fileType == "python" then
+    if fileType == "lua" or fileType == "python" then
         printStatement = "print('" .. selection .. ": ', " .. selection .. ")"
     elseif fileType == "go" then
         printStatement = 'fmt.Println("' .. selection .. ': ", ' .. selection ..')'
