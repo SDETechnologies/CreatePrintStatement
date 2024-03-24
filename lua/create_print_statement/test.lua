@@ -1,4 +1,5 @@
-local function test()
+local M = {}
+function M.test()
 
     print("swag!")
     local line = vim.fn.line(".")
@@ -24,3 +25,5 @@ end
 
 -- vim.keymap.set('v', '<leader>cp', function() test() end)
 -- test()
+
+return M
