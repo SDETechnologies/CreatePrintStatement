@@ -4,6 +4,6 @@ local print = require("create_print_statement.test")
 local M = {}
 
 M.create_print_statement = cps.create_print_statement
-M.print = print.print
+M.print = print.test
 
 return M
