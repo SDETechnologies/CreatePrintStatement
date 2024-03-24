@@ -25,6 +25,8 @@ function M.test()
         printStatement = "print('" .. selection .. ":', " .. selection .. ")"
     elseif fileType == "go" then
         printStatement = 'fmt.Println("' .. selection .. ': ", ' .. selection ..')'
+    elseif fileType == "js" then
+        printStatement = 'console.log("' .. selection .. ': ", ' .. selection .. ')'
     else
         print("invalid file type")
         return 
