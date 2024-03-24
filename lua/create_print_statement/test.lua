@@ -24,7 +24,7 @@ function M.test()
     if fileType == "lua" then
         printStatement = "print('" .. selection .. ":', " .. selection .. ")"
     elseif fileType == "go" then
-        printStatement = 'fmt.Println("' .. selection .. ': ", ' .. selection ..'")'
+        printStatement = 'fmt.Println("' .. selection .. ': ", ' .. selection ..')'
     else
         print("invalid file type")
         return 
