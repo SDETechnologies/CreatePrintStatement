@@ -24,6 +24,6 @@ function M.test()
 end
 
 -- vim.keymap.set('v', '<leader>cp', function() test() end)
--- test()
+M.test()
 
 return M
