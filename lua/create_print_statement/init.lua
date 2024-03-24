@@ -1,4 +1,4 @@
-local createPrintStatement = require("create_print_statement")
+local createPrintStatement = require("create_print_statement.create_print_statement")
 
 local M = {}
 
