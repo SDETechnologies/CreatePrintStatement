@@ -21,11 +21,11 @@ function M.test()
 
     local fileType = vim.bo.filetype
     -- print('fileType: ', fileType)
-    if fileType == "lua" then
-        printStatement = "print('" .. selection .. ":', " .. selection .. ")"
+    if fileType == "lua" || fileType == "python" then
+        printStatement = "print('" .. selection .. ": ', " .. selection .. ")"
     elseif fileType == "go" then
         printStatement = 'fmt.Println("' .. selection .. ': ", ' .. selection ..')'
-    elseif fileType == "js" then
+    elseif fileType == "javascript" then
         printStatement = 'console.log("' .. selection .. ': ", ' .. selection .. ')'
     else
         print("invalid file type")
