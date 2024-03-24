@@ -1,9 +1,6 @@
 local M = {}
 
 function M.create_print_statement()
-
-    local test = "hi"
-
     print("create_print_statement")
 end
 
