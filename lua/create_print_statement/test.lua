@@ -27,6 +27,8 @@ function M.test()
         printStatement = 'fmt.Println("' .. selection .. ': ", ' .. selection ..')'
     elseif fileType == "javascript" then
         printStatement = 'console.log("' .. selection .. ': ", ' .. selection .. ')'
+    elseif fileType == "sh" then
+        printstatement = 'echo "' .. selection .. ': ", $' .. selection
     else
         print("invalid file type: ", fileType)
         return 
@@ -46,6 +48,6 @@ function M.test()
 end
 
 -- vim.keymap.set('v', '<leader>cp', function() test() end)
-M.test()
+-- M.test()
 
 return M
