@@ -20,7 +20,7 @@ function M.test()
     local printStatement = ""
 
     local fileType = vim.bo.filetype
-    -- print('fileType: ', fileType)
+    print('fileType: ', fileType)
     if fileType == "lua" or fileType == "python" then
         printStatement = "print('" .. selection .. ": ', " .. selection .. ")"
     elseif fileType == "go" then
@@ -46,6 +46,6 @@ function M.test()
 end
 
 -- vim.keymap.set('v', '<leader>cp', function() test() end)
--- M.test()
+M.test()
 
 return M
