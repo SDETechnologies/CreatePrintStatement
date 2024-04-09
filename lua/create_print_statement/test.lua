@@ -28,7 +28,7 @@ function M.test()
     elseif fileType == "javascript" then
         printStatement = 'console.log("' .. selection .. ': ", ' .. selection .. ')'
     elseif fileType == "sh" then
-        printStatement = 'echo "' .. selection .. ': $' .. selection
+        printStatement = 'echo "' .. selection .. ': $' .. selection .. '"'
     else
         print("invalid file type: ", fileType)
         return 
