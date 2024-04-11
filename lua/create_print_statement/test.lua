@@ -12,6 +12,7 @@ function isFunction(lineText)
 end
 
 function getFunctionParams(lineText)
+    local paramString = ""
     local items = {}
     local word=lineText:match("%((.-)%)")
     print("word: ", word)
@@ -20,9 +21,11 @@ function getFunctionParams(lineText)
     end
     for item in word:gmatch("%s*([^,%s]+%)s*,?") do
         print('item: ', item)
-        table.insert(items, item)
+        -- table.insert(items, item)
+        paramString += item + ","
     end
-    return items
+    -- return items
+    return paramString
 end
 
 local M = {}
