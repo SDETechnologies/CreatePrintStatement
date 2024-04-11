@@ -70,7 +70,7 @@ function M.printFunction()
         error("No function found on line")
         return
     end
-M.printFunction()
+-- M.printFunction()
 
 end
 
