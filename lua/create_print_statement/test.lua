@@ -1,3 +1,8 @@
+function isFunction(lineText)
+    print('isFunction(linetext=', linetext, ')')
+    return false
+end
+
 local M = {}
 function M.test()
     -- print("swag!")
@@ -53,6 +58,15 @@ function M.printFunction()
     local line = vim.fn.line(".")
     local lineText = vim.fn.getline(line)
     print('lineText: ', lineText)
+    local isFunction = isFunction(lineText)
+    print('isFunction: ', isFunction)
+    if isFunction == false then
+        -- print("No function found on line")
+        error("No function found on line")
+        return
+    end
+M.printFunction()
+
 end
 
 return M
