@@ -101,7 +101,7 @@ function M.printFunction()
     --     print(param.."")
     -- end
     -- print('table: ', table.concat(functionParams, ','))
-    print('pairs: ', ipairs(functionParams))
+    -- print('pairs: ', ipairs(functionParams))
 
 -- M.printFunction()
 
