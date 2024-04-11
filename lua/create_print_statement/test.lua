@@ -78,7 +78,7 @@ function M.printFunction()
     local functionParams=lineText:match("%((.-)%)")
     print('functionParams: ', functionParams)
     local items = {}
-    for item in lineText:gmatch("%s*([^,%s]+)%s*,?") do
+    for item in lineText:gmatch("%s*([^,%s]+%)%s*,?") do
         print('item: ', item)
         table.insert(items, item)
     end
