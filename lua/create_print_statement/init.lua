@@ -6,6 +6,6 @@ local M = {}
 
 M.create_print_statement = cps.create_print_statement
 M.print = print.test
-M.printFunction = print.test.printFunction
+M.printFunction = print.printFunction
 
 return M
