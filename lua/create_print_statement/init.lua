@@ -1,6 +1,5 @@
 local cps = require("create_print_statement.create_print_statement")
 local print = require("create_print_statement.test")
-local printFunction = require("create_print_statement.printFunction")
 
 local M = {}
 
