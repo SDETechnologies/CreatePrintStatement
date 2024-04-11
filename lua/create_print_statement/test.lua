@@ -73,8 +73,8 @@ function M.printFunction()
         error("No function found on line")
         return
     end
-    local functionName=lineText:match("%a+%(")
-    print('functionName: ', functionName)
+    -- local functionName=lineText:match("%a")
+    -- print('functionName: ', functionName)
 
 M.printFunction()
 
