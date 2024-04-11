@@ -103,6 +103,9 @@ function M.printFunction()
     -- end
     -- print('table: ', table.concat(functionParams, ','))
     -- print('pairs: ', ipairs(functionParams))
+    for substring in functionParams:gmatch("([^,%s]+)") do
+        print('substring: ', substring)
+    end
 
 -- M.printFunction()
 
