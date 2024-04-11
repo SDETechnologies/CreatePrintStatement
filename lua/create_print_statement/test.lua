@@ -119,7 +119,7 @@ function M.printFunction()
     local functionParams = getFunctionParams(lineText)
     print('functionParams: ', functionParams)
     local fileType = vim.bo.filetype
-    printStatement = getPrintStatement(functionParams, fileType)
+    printStatement = functionName.."("..getPrintStatement(functionParams, fileType)..")"
     print('printStatement: ', printStatement)
     -- -- print('fileType: ', fileType)
     -- for k in ipairs(functionParams) do
