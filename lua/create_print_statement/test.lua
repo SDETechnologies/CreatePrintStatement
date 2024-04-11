@@ -1,8 +1,10 @@
-function isFunction(lineText)
+local function isFunction(lineText)
     print('isFunction(linetext=', linetext, ')')
-    if string.find(lineText, "("), 1, true) ~= nil and string.find(lineText,')', 1, true) ~= nil then
-        return true
-    end
+    local word = lineText:match("%(%a+)%")
+    print("word: ", word)
+    -- if string.find(lineText, "("), 1, true) ~= nil and string.find(lineText,")", 1, true) ~= nil then
+    --     return true
+    -- end
     return false
 end
 
@@ -68,7 +70,7 @@ function M.printFunction()
         error("No function found on line")
         return
     end
--- M.printFunction()
+M.printFunction(
 
 end
 
