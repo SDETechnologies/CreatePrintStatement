@@ -1,6 +1,7 @@
 function isFunction(lineText)
     print('isFunction(','lineText=',lineText,')')
-    print('isFunction(linetext=', linetext, ')')
+    print('isFunction(','lineText=',lineText,')')
+    -- print('isFunction(linetext=', linetext, ')')
     local word=lineText:match("%((.-)%)")
     print("word: ", word)
     -- if string.find(lineText, "("), 1, true) ~= nil and string.find(lineText,")", 1, true) ~= nil then
@@ -139,7 +140,7 @@ function M.printFunction()
 
         -- Invoke the = operator to format the line
         vim.api.nvim_command('normal! =')
-        vim.ap.nvim_command('normal! _')
+        vim.api.nvim_command('normal! _')
     end
 
 -- M.printFunction()
