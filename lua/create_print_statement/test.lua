@@ -73,7 +73,7 @@ function M.printFunction()
         error("No function found on line")
         return
     end
-    local functionName=lineText:match("^(.-)%(")
+    local functionName=lineText:match("%s(%w+)%(")
     print('functionName: ', functionName)
 
 -- M.printFunction()
