@@ -77,6 +77,13 @@ function M.printFunction()
     print('functionName: ', functionName)
     local functionParams=lineText:match("%((.-)%)")
     print('functionParams: ', functionParams)
+    local items = {}
+    for item in lineText:gmatch("%s*([^,%s]+)%s*,?") do
+        print('item: ', item)
+        table.insert(items, item)
+    end
+    local fileType = vim.bo.filetypie
+    -- print('fileType: ', fileType)
 
 -- M.printFunction()
 
