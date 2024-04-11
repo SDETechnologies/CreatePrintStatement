@@ -94,7 +94,7 @@ function M.printFunction()
     print('functionParams: ', functionParams)
     local fileType = vim.bo.filetype
     -- print('fileType: ', fileType)
-    for i, param in ipairs(functionParams) do
+    for i, param in functionParams do
         print('param[', i, ']: ', param)
     end
 
