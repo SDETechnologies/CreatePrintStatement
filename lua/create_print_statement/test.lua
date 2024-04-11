@@ -22,7 +22,7 @@ function getFunctionParams(lineText)
     for item in word:gmatch("%s*([^,%s]+%)s*,?") do
         print('item: ', item)
         -- table.insert(items, item)
-        paramString += item + ","
+        paramString = paramString +  item + ","
     end
     -- return items
     return paramString
