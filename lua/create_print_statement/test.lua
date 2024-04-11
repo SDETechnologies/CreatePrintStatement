@@ -54,6 +54,7 @@ function getFunctionParams(lineText, fileType)
         finalParamString = removeSubstring(finalParamString, dataTypeString)
     end
     end
+    return finalParamString
 end
 
 function getPrintStatement(text, fileType)
