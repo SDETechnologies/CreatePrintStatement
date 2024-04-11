@@ -93,10 +93,11 @@ function M.printFunction()
     local functionParams = getFunctionParams(lineText)
     print('functionParams: ', functionParams)
     local fileType = vim.bo.filetype
-    -- print('fileType: ', fileType)
-    for _,param in ipairs(functionParams) do
-        print(param.."")
-    end
+    -- -- print('fileType: ', fileType)
+    -- for k in ipairs(functionParams) do
+    --     print(param.."")
+    -- end
+    print(table.concat(functionParamms, '\n'))
 
 -- M.printFunction()
 
