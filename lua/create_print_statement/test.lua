@@ -98,7 +98,7 @@ function M.printFunction()
     --     print(param.."")
     -- end
     -- print('table: ', table.concat(functionParams, ','))
-    for k,v in pairs(functionParams) do
+    for k,v in ipairs(functionParams) do
         print(k.." = "..v) 
     end
 
