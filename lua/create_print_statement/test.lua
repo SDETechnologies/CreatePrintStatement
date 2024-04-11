@@ -1,6 +1,6 @@
 function isFunction(lineText)
     print('isFunction(linetext=', linetext, ')')
-    if string.find(lineText, "(")) ~= nil and string.find(lineText,')') ~= nil then
+    if string.find(lineText, "("), 1, true) ~= nil and string.find(lineText,')', 1, true) ~= nil then
         return true
     end
     return false
