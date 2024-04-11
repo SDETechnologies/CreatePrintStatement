@@ -1,6 +1,6 @@
 local function isFunction(lineText)
     print('isFunction(linetext=', linetext, ')')
-    local word=lineText:match("%(%a+)%)")
+    local word = lineText:match("%(%a+)%)")
     print("word: ", word)
     -- if string.find(lineText, "("), 1, true) ~= nil and string.find(lineText,")", 1, true) ~= nil then
     --     return true
