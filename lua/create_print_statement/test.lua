@@ -91,7 +91,7 @@ function M.printFunction()
     print('functionName: ', functionName)
     -- local functionParams=lineText:match("%((.-)%)")
     local functionParams = getFunctionParams(lineText)
-    print('functionParams: ', dump(functionParams))
+    print('functionParams: ', dump(ipairs(functionParams)))
     local fileType = vim.bo.filetype
     -- print('fileType: ', fileType)
     for i, param in ipairs(functionParams) do
