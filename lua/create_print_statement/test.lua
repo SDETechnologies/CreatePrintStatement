@@ -23,7 +23,7 @@ function getFunctionParams(lineText)
     for item in word:gmatch("[^,%s]+") do
         print('item: ', item)
         -- table.insert(items, item)
-        -- paramString = paramString +  item + ","
+        paramString = paramString +  item + ","
     end
     -- return items
     return paramString
@@ -95,7 +95,7 @@ function M.printFunction()
     print('functionName: ', functionName)
     -- local functionParams=lineText:match("%((.-)%)")
     local functionParams = getFunctionParams(lineText)
-    -- print('functionParams: ', functionParams)
+    print('functionParams: ', functionParams)
     local fileType = vim.bo.filetype
     -- -- print('fileType: ', fileType)
     -- for k in ipairs(functionParams) do
