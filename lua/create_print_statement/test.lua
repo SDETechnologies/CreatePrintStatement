@@ -5,7 +5,6 @@ function M.test()
     -- print("line: ", line)
     -- Get the text of the current line
     local line_text = vim.fn.getline(line)
-    -- print("line_text: ", line_text)
     -- Get the highlighted text
     local selection = vim.fn.getreg(vim.v.register)
     -- local selection = vim.fn.getreg("*")
@@ -49,5 +48,11 @@ end
 
 -- vim.keymap.set('v', '<leader>cp', function() test() end)
 -- M.test()
+
+function M.printFunction()
+    local line = vim.fn.line(".")
+    local lineText = vim.fn.getline(line)
+    print('lineText: ', lineText)
+end
 
 return M
