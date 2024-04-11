@@ -1,6 +1,6 @@
 function isFunction(lineText)
     print('isFunction(linetext=', linetext, ')')
-    local word=lineText:match("%(%a+)%)")
+    local word=lineText:match("%a((%a+)%)")
     print("word: ", word)
     -- if string.find(lineText, "("), 1, true) ~= nil and string.find(lineText,")", 1, true) ~= nil then
     --     return true
@@ -64,7 +64,7 @@ function M.printFunction()
     local lineText = vim.fn.getline(line)
     print('lineText: ', lineText)
     local isFunction = isFunction(lineText)
-    print('isFunction: ', isFunction)
+    -- print('isFunction: ', isFunction)
     if isFunction == false then
         -- print("No function found on line")
         error("No function found on line")
