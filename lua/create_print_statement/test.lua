@@ -12,6 +12,7 @@ function isFunction(lineText)
 end
 
 function getFunctionParams(lineText)
+    finalParamString = ""
     paramString = ""
     local items = {}
     local word=lineText:match("%((.-)%)")
@@ -26,7 +27,11 @@ function getFunctionParams(lineText)
         paramString = paramString..item..","
     end
     -- return items
-    return paramString
+    for substring in paramString:gmatch("([^,%s]+)") do
+        print('substring: ', substring)
+        finalParamString = finalParamString..substring..": "..substring
+    end
+    return finalParamString
 end
 
 local M = {}
@@ -103,9 +108,9 @@ function M.printFunction()
     -- end
     -- print('table: ', table.concat(functionParams, ','))
     -- print('pairs: ', ipairs(functionParams))
-    for substring in functionParams:gmatch("([^,%s]+)") do
-        print('substring: ', substring)
-    end
+    -- for substring in functionParams:gmatch("([^,%s]+)") do
+    --     print('substring: ', substring)
+    -- end
 
 -- M.printFunction()
 
