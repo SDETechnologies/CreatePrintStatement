@@ -18,7 +18,7 @@ function getFunctionParams(lineText)
     print("word: ", word)
     if word == nil then
         error("no function detected in getFunctionParams(lineText=",lineText,")")
-        return {}
+        return
     end
     for item in word:gmatch("%s*([^,%s]+%)s*,?") do
         print('item: ', item)
