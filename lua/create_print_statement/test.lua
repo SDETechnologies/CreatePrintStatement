@@ -99,7 +99,7 @@ function M.printFunction()
     -- end
     -- print('table: ', table.concat(functionParams, ','))
     for k,v in ipairs(functionParams) do
-        print(k.." = "..v) 
+        print('test: ', k.." = "..v) 
     end
 
 -- M.printFunction()
