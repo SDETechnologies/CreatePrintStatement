@@ -75,6 +75,8 @@ function M.printFunction()
     end
     local functionName=lineText:match("%s(%w+)%(")
     print('functionName: ', functionName)
+    local functionParams=lineText:match("%((.-)%)")
+    print('functionParams: ', functionParams)
 
 -- M.printFunction()
 
