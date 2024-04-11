@@ -82,7 +82,7 @@ function M.printFunction()
         print('item: ', item)
         table.insert(items, item)
     end
-    local fileType = vim.bo.filetypie
+    local fileType = vim.bo.filetype
     -- print('fileType: ', fileType)
 
 -- M.printFunction()
