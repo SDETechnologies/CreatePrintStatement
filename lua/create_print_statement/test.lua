@@ -12,7 +12,20 @@ function isFunction(lineText)
     return true
 end
 
-function getFunctionParams(lineText)
+local function removeSubstring(originalString, substringToRemove)
+    -- Escape special characters in the substring to be removed
+    local escapedSubstring = substringToRemove:gsub("[%^%$%(%)%%%.%[%]%*%+%-%?]", "%%%1")
+    
+    -- Define a pattern to match the substring to be removed
+    local pattern = "%s*" .. escapedSubstring .. "%s*"
+    
+    -- Use string.gsub to replace the matched substring with an empty string
+    local resultString = originalString:gsub(pattern, "")
+    
+    return resultString
+end
+
+function getFunctionParams(lineText, fileType)
     finalParamString = ""
     paramString = ""
     local items = {}
@@ -32,7 +45,14 @@ function getFunctionParams(lineText)
         print('substring: ', substring)
         finalParamString = finalParamString.."'"..substring.."=',"..substring..","
     end
-    return finalParamString:sub(1,-2)
+    finalParamString = finalParamString.sub(1,-2)
+    -- return finalParamString:sub(1,-2)
+    if fileType == "go" then
+        goDataTypes = {'int','int8','int32','int64','string','bool','uint','uint8','uint16','uint32','uint64','unitptr', 'byte', 'rune', 'float32','float64','complex64','complex128'}
+    for dataTypeString in goDataTypes do
+        finalParamString = removeSubstring(finalParamString, dataTypeString)
+    end
+    end
 end
 
 function getPrintStatement(text, fileType)
