@@ -22,6 +22,7 @@ function getFunctionParams(lineText)
         print('item: ', item)
         table.insert(items, item)
     end
+    return items
 end
 
 local M = {}
@@ -88,7 +89,8 @@ function M.printFunction()
     end
     local functionName=lineText:match("%s(%w+)%(")
     print('functionName: ', functionName)
-    local functionParams=lineText:match("%((.-)%)")
+    -- local functionParams=lineText:match("%((.-)%)")
+    local functionParams = getFunctionParams(lineText)
     print('functionParams: ', functionParams)
     local items = {}
     local fileType = vim.bo.filetype
