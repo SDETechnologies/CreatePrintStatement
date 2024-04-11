@@ -44,7 +44,7 @@ function getFunctionParams(lineText, fileType)
     -- return items
     for substring in paramString:gmatch("([^,%s]+)") do
         print('substring: ', substring)
-        finalParamString = finalParamString.."'"..substring.."=',"..substring..","
+        finalParamString = finalParamString..'"'..substring..'=",'..substring..','
     end
     finalParamString = finalParamString.sub(1,-2)
     -- return finalParamString:sub(1,-2)
