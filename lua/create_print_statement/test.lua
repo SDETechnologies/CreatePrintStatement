@@ -1,6 +1,5 @@
 function isFunction(lineText)
     print('isFunction(','lineText=',lineText,')')
-    print('isFunction(','lineText=',lineText,')')
     -- print('isFunction(linetext=', linetext, ')')
     local word=lineText:match("%((.-)%)")
     print("word: ", word)
