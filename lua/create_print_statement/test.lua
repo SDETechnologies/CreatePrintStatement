@@ -14,7 +14,8 @@ end
 
 local function removeSubstring(originalString, substringToRemove)
     -- Escape special characters in the substring to be removed
-    local escapedSubstring = substringToRemove:gsub("[%^%$%(%)%%%.%[%]%*%+%-%?]", "%%%1")
+    -- local escapedSubstring = substringToRemove:gsub("[%^%$%(%)%%%.%[%]%*%+%-%?]", "%%%1")
+    local escapedSubstring = substringToRemove
     
     -- Define a pattern to match the substring to be removed
     local pattern = "%s*" .. escapedSubstring .. "%s*"
