@@ -29,9 +29,26 @@ function getFunctionParams(lineText)
     -- return items
     for substring in paramString:gmatch("([^,%s]+)") do
         print('substring: ', substring)
-        finalParamString = finalParamString..substring..": "..substring
+        finalParamString = finalParamString.."'"..substring.."=',"..substring..","
     end
-    return finalParamString
+    return finalParamString:sub(1,-2)
+end
+
+function getPrintStatement(text, fileType)
+    local printStatement = ""
+    if fileType == "lua" or fileType == "python" then
+        printStatement = "print('" .. text .. ")"
+    elseif fileType == "go" then
+        printStatement = 'fmt.Println("' .. selection ..')'
+    elseif fileType == "javascript" then
+        printStatement = 'console.log("' .. selection .. ')'
+    elseif fileType == "sh" then
+        printStatement = 'echo "' .. selection .. '"'
+    else
+        print("invalid file type: ", fileType)
+        return 
+    end
+    return printStatement
 end
 
 local M = {}
@@ -102,6 +119,8 @@ function M.printFunction()
     local functionParams = getFunctionParams(lineText)
     print('functionParams: ', functionParams)
     local fileType = vim.bo.filetype
+    printStatement = getPrintStatement(functionParams, fileType)
+    print('printStatement: ', printStatement)
     -- -- print('fileType: ', fileType)
     -- for k in ipairs(functionParams) do
     --     print(param.."")
