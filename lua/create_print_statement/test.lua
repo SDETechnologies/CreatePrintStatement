@@ -11,6 +11,19 @@ function isFunction(lineText)
     return true
 end
 
+function getFunctionParams(lineText)
+    local items = {}
+    local word=lineText:match("%((.-)%)")
+    print("word: ", word)
+    if word == nil then
+        return {}
+    end
+    for item in word:gmatch("%s*([^,%s]+%)s*,?") do
+        print('item: ', item)
+        table.insert(items, item)
+    end
+end
+
 local M = {}
 function M.test()
     -- print("swag!")
@@ -78,10 +91,6 @@ function M.printFunction()
     local functionParams=lineText:match("%((.-)%)")
     print('functionParams: ', functionParams)
     local items = {}
-    for item in lineText:gmatch("%s*([^,%s]+%)%s*,?") do
-        print('item: ', item)
-        table.insert(items, item)
-    end
     local fileType = vim.bo.filetype
     -- print('fileType: ', fileType)
 
