@@ -15,7 +15,7 @@ end
 local function removeSubstring(originalString, substringToRemove)
     -- Escape special characters in the substring to be removed
     local escapedSubstring = substringToRemove:gsub("[%^%$%(%)%%%.%[%]%*%+%-%?]", "%%%1")
-    -- local escapedSubstring = substringToRemove
+    -- local escapedSubstring = substringToReove
     
     -- Define a pattern to match the substring to be removed
     local pattern = "%s*" .. escapedSubstring .. "%s*"
@@ -142,7 +142,7 @@ function M.printFunction()
     local functionParams = getFunctionParams(lineText)
     print('functionParams: ', functionParams)
     local fileType = vim.bo.filetype
-    printStatement = getPrintStatement("'"..functionName.."(',"..functionParams..",')'", fileType)
+    printStatement = getPrintStatement("'"..functionName..'(",'..functionParams..',")"', fileType)
     print('printStatement: ', printStatement)
     -- -- print('fileType: ', fileType)
     -- for k in ipairs(functionParams) do
