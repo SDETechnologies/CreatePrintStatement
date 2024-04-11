@@ -40,7 +40,7 @@ function getPrintStatement(text, fileType)
     if fileType == "lua" or fileType == "python" then
         printStatement = "print(" .. text .. ")"
     elseif fileType == "go" then
-        printStatement = 'fmt.Println(' .. selection ..')'
+        printStatement = 'fmt.Println(' .. text ..')'
     elseif fileType == "javascript" then
         printStatement = 'console.log(' .. text .. ')'
     elseif fileType == "sh" then
