@@ -130,6 +130,15 @@ function M.printFunction()
     -- for substring in functionParams:gmatch("([^,%s]+)") do
     --     print('substring: ', substring)
     -- end
+    if printStatement ~= "" then
+        vim.fn.append(line, printStatement)
+        vim.api.nvim_command('normal! j')
+        -- Enter visual line mode
+        vim.api.nvim_command('normal! V')
+
+        -- Invoke the = operator to format the line
+        vim.api.nvim_command('normal! =')
+    end
 
 -- M.printFunction()
 
