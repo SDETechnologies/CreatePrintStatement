@@ -37,13 +37,13 @@ end
 function getPrintStatement(text, fileType)
     local printStatement = ""
     if fileType == "lua" or fileType == "python" then
-        printStatement = "print('" .. text .. ")"
+        printStatement = "print(" .. text .. ")"
     elseif fileType == "go" then
-        printStatement = 'fmt.Println("' .. selection ..')'
+        printStatement = 'fmt.Println(' .. selection ..')'
     elseif fileType == "javascript" then
-        printStatement = 'console.log("' .. selection .. ')'
+        printStatement = 'console.log(' .. text .. ')'
     elseif fileType == "sh" then
-        printStatement = 'echo "' .. selection .. '"'
+        printStatement = 'echo "' .. text .. ''
     else
         print("invalid file type: ", fileType)
         return 
