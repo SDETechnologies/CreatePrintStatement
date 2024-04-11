@@ -1,6 +1,6 @@
 function isFunction(lineText)
     print('isFunction(linetext=', linetext, ')')
-    if string.find(lineText, '(') ~= nil and string.find(lineText, ')') ~= nil then
+    if string.find(lineText, "(")) ~= nil and string.find(lineText, ")") ~= nil then
         return true
     end
     return false
@@ -68,7 +68,7 @@ function M.printFunction()
         error("No function found on line")
         return
     end
-M.printFunction()
+-- M.printFunction()
 
 end
 
