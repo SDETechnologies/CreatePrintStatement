@@ -12,7 +12,7 @@ function isFunction(lineText)
 end
 
 function getFunctionParams(lineText)
-    local paramString = ""
+    paramString = ""
     local items = {}
     local word=lineText:match("%((.-)%)")
     print("word: ", word)
